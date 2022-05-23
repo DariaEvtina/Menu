@@ -12,6 +12,56 @@ html {
 body {
   margin: 0;
 }
+button#tahvel {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+}
+button#tthk {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+}
+button#menu {
+    background: #B5CFBD;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+}
+img#logo {
+    width: 100%;
+    max-height: 191px;
+    max-width: 253px;
+    height: auto;
+    float: right;
+    border-radius: 50%;
+    /*position: absolute;
+    width: 253px;
+    height: 191px;
+    left: 1517.62px;
+    top: 149px;
+    border-radius: 50%;*/
+}
+h1 {
+    font-family: 'Hanuman';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 70px;
+    color: #3E6F49;
+}
 article,
 aside,
 details,
