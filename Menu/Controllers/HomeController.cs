@@ -8,7 +8,7 @@ using System.Net.Mail;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
-
+using System.Data.SqlClient;
 
 namespace Menu.Controllers
 {
@@ -92,6 +92,22 @@ namespace Menu.Controllers
         public ActionResult EditConfirmedPidu(Menu1 menu1)
         {
             db.Entry(menu1).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Menus1");
+        }
+
+        [Authorize]
+        [HttpGet]
+
+        public ActionResult ClearMenu1()
+        {
+            return View();
+        }
+        [HttpPost, ActionName("ClearMenu1")]
+        public ActionResult ClearConfirmedMenu1()
+        {
+            var toDelete = db.Menus1.ToList();
+            db.Menus1.RemoveRange(toDelete);
             db.SaveChanges();
             return RedirectToAction("Menus1");
         }
