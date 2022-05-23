@@ -1,17 +1,19 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
 
+<h1>Canteen Menu</h1>
 <div class="jumbotron">
-    <h1>Canteen Menu</h1>
+    <img src="~/img/drawing.png" id="logo" />
     <p class="lead">Canteen menu today</p>
-    <p class="buttons1"> @Html.ActionLink("Menu", "Menus1", "Home") </p>
+    <button id="menu"> @Html.ActionLink("Menu", "Menus1", "Home")</button>
     <br />
-    <p>@Html.ActionLink("About", "About", "Home")</p>
     <br />
-
+    <button id="tahvel">
+        <a href="https://tahvel.edu.ee">Tahvel</a>
+    </button> <a></a>
+    <button id="tthk">
+        <a href="https://tthk.ee">Kool</a>
+    </button>
 </div>
 
 <div class="row">
-
+   
 </div>
