@@ -111,5 +111,12 @@ namespace Menu.Controllers
             db.SaveChanges();
             return RedirectToAction("Menus1");
         }
+        [HttpGet]
+        public ActionResult SortByPrice()
+        {
+            db.Menus1.ToArray();
+            db.SaveChanges();
+            return RedirectToAction("Menus1");
+        }
     }
 }
