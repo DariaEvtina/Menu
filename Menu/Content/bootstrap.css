@@ -54,7 +54,23 @@ img#logo {
     top: 149px;
     border-radius: 50%;*/
 }
-h1 {
+h1#home {
+    font-family: 'Hanuman';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 70px;
+    color: #3E6F49;
+}
+h1#about {
+    font-family: 'Hanuman';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 70px;
+    color: #3E6F49;
+}
+h1#menu {
     font-family: 'Hanuman';
     font-style: normal;
     font-weight: 400;
