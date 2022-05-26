@@ -16,8 +16,8 @@ namespace Menu.Controllers
     {
         public ActionResult Index()
         {
-            Menu1 menu;
-            return View();
+            IEnumerable<Menu1> menus1 = db.Menus1;
+            return View(menus1);
         }
         Menu1Context db = new Menu1Context();
         public ActionResult Menus1()
