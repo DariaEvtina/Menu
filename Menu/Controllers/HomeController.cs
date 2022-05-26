@@ -8,12 +8,14 @@ using System.Net.Mail;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
-
+using System.Threading.Tasks;
 
 namespace Menu.Controllers
 {
     public class HomeController : Controller
     {
+        public ApplicationDbContext _application;
+
         public ActionResult Index()
         {
             Menu1 menu;
@@ -31,7 +33,37 @@ namespace Menu.Controllers
             ViewBag.Message = "Your application description page.";
 
             return View();
+        }     
+
+
+
+
+
+
+
+
+
+        public ActionResult UserList(ApplicationDbContext application)
+        {
+            _application = application;
+            return View(_application.Users.ToList());
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         public ActionResult Contact()
         {

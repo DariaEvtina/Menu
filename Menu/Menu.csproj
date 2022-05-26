@@ -245,6 +245,7 @@
     <Content Include="Views\Home\CreateMenu1.cshtml" />
     <Content Include="Views\Home\DeleteMenu1.cshtml" />
     <Content Include="Views\Home\EditMenu1.cshtml" />
+    <Content Include="Views\Home\UserList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

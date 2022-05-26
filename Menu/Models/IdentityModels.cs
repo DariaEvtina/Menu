@@ -29,5 +29,6 @@ namespace Menu.Models
         {
             return new ApplicationDbContext();
         }
+
     }
 }
