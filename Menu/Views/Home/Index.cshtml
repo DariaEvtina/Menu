@@ -12,6 +12,50 @@
 
 </div>
 
-<div class="row">
+
+<div>
+    @model IEnumerable<Menu.Models.Menu1>
+
+    @{
+        ViewBag.Title = "Menus1";
+    }
+
+    <h2>Menus1</h2>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cost)
+            </th>
+            <th></th>
+        </tr>
+
+        <thead>
+            <tr>
+                <th style="width:10%;">
+                    @Html.ActionLink("Name", "Index", new { sortField = "Name", currentSortField = ViewBag.SortField, currentSortOrder = ViewBag.SortOrder })
+                </th>
+                <th style="width:20%;">
+                    @Html.ActionLink("Cost", "Index", new { sortField = "Cost", currentSortField = ViewBag.SortField, currentSortOrder = ViewBag.SortOrder })
+                </th>
+            </tr>
+        </thead>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cost)
+                </td>
+            </tr>
+        }
+
+    </table>
 
 </div>

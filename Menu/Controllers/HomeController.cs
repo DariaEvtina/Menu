@@ -8,7 +8,7 @@ using System.Net.Mail;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
-
+using System.Data.SqlClient;
 
 namespace Menu.Controllers
 {
@@ -16,8 +16,8 @@ namespace Menu.Controllers
     {
         public ActionResult Index()
         {
-            Menu1 menu;
-            return View();
+            IEnumerable<Menu1> menus1 = db.Menus1;
+            return View(menus1);
         }
         Menu1Context db = new Menu1Context();
         public ActionResult Menus1()
@@ -92,6 +92,29 @@ namespace Menu.Controllers
         public ActionResult EditConfirmedPidu(Menu1 menu1)
         {
             db.Entry(menu1).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Menus1");
+        }
+
+        [Authorize]
+        [HttpGet]
+
+        public ActionResult ClearMenu1()
+        {
+            return View();
+        }
+        [HttpPost, ActionName("ClearMenu1")]
+        public ActionResult ClearConfirmedMenu1()
+        {
+            var toDelete = db.Menus1.ToList();
+            db.Menus1.RemoveRange(toDelete);
+            db.SaveChanges();
+            return RedirectToAction("Menus1");
+        }
+        [HttpGet]
+        public ActionResult SortByPrice()
+        {
+            db.Menus1.ToArray();
             db.SaveChanges();
             return RedirectToAction("Menus1");
         }
