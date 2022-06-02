@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Menu.Models.Menu1>
+
+@{
+    ViewBag.Title = "Menu today";
+}
+<h1 id="menu">@ViewBag.Title</h1>
+
+<p>
+    @Html.ActionLink("Create New", "CreateMenu1")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.ActionLink("Cost", "Menus1") |
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+
+                @Html.ActionLink("Edit", "EditMenu1", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "DeleteMenu1", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
