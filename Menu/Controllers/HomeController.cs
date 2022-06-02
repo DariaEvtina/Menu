@@ -32,7 +32,7 @@ namespace Menu.Controllers
         }    
         public ActionResult Menus1Sorted()
         {
-            IEnumerable<Menu1> menus1 = db.Menus1.OrderBy(Menu1 => Menu1.Cost);
+            IEnumerable<Menu1> menus1 = db.Menus1.OrderByDescending(Menu1 => Menu1.Cost);
             return View(menus1);
         }    
 
