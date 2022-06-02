@@ -15,18 +15,27 @@ namespace Menu.Controllers
     public class HomeController : Controller
     {
         public ApplicationDbContext _application;
+        public void Sort(Comparison<Menu1> comparison)
+        {
 
+        }
         public ActionResult Index()
         {
-            Menu1 menu;
-            return View();
+            IEnumerable<Menu1> menus1 = db.Menus1;
+            return View(menus1);
         }
         Menu1Context db = new Menu1Context();
         public ActionResult Menus1()
         {
             IEnumerable<Menu1> menus1 = db.Menus1;
             return View(menus1);
-        }
+        }    
+        public ActionResult Menus1Sorted()
+        {
+            IEnumerable<Menu1> menus1 = db.Menus1.OrderBy(Menu1 => Menu1.Cost);
+            return View(menus1);
+        }    
+
 
         public ActionResult About()
         {
@@ -83,7 +92,7 @@ namespace Menu.Controllers
         {
             db.Menus1.Add(menu1);
             db.SaveChanges();
-            return RedirectToAction("Menus1");
+            return RedirectToAction("Menus1");  
         }
         [Authorize]
         [HttpGet]
